@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<!-- CSS BASICS-->
+
+<!-- Inline coloring-->
+<html>
+<body>
+
+<!-- Test Colori RGB
+ 	 rgba(red, green, blue, alpha)-->
+<h1 style="color:rgb(0, 0, 250); background-color:rgba(0, 0, 0, 0.5);">
+	Test RGBA
+</h1>
+
+<!-- Test Colori HEX
+	 funziona come RGB ma con 
+	 scrittura esadecimale più compatta-->
+<h1 style="background-color:#ff0000; color:black;">
+	rosso (#ff0000 = 255, 0, 0)
+</h1>
+<h1 style="background-color:#00ff00; color:black;">
+	verde (#00ff00 = 0, 255, 0)
+</h1>
+<h1 style="background-color:#0000ff; color:black;">
+	blu (#0000ff = 0, 0, 255)
+</h1>
+
+<!-- Test Colori HSL
+	 hsl(hue, saturation%, lightness%) -->
+<h1 style="color:hsl(0, 50%, 100%); background-color: hsl(0, 50%, 0%);">
+	bianco
+</h1>
+
+</body>
+</html>
+
+<!-- External coloring-->
+<html>
+
+<head>
+<!-- Definito lo stile per l'intera pagina tra le tag head-->
+<style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+</style>
+<!-- NB: è applicato All'INTERO DOCUMENTO
+ 	 L'ultimo in ordine di applicazione vince-->
+</head>
+
+<body>
+
+<h1>sesso</h1>
+<p>con nani</p>
+
+</body>
+</html>
+
+<html>
+<body>
+
+<!-- Font (internal)-->
+<h1 style="font-family: comic sans MS; font-size: 300%;">
+	Comic Sans MS title 300%</h1>
+<!-- Border-->
+<p style="border: 2px solid blue; 
+color: black; font-family: comic sans ms; font-size: 300%;">
+	Powdah blue border
+</p>
+<!-- Padding (distanza dal contorno del testo)-->
+<p style="border: 2px solid black; padding: 30px;
+color: black; font-family: comic sans ms; font-size: 300%;">
+	Black  border, Padding 30px
+</p>
+<!-- Margin (distanza del contorno da altri elementi esterni)-->
+<p style="margin: 30px; border: 2px solid black;
+color: black; font-family: comic sans ms; font-size: 300%;">
+	Black border, margin 30px
+</p>
+</body>
+</html>
+
+<!-- Alternativamente si può definire lo stile su un documento .css separato e importarlo in head:
+ 	 <link rel="stylesheet" href="styles.css">
+ 	 il documento va scritto in CSS -->
