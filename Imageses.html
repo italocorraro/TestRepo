@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        megaboobs
+        <title>ImagesTest</title>
+        <link rel="icon" type="image/x-icon" href="Crocco.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-color: beige;
+            }
+        </style>
     </head>
     <body>
-        tits
+        <div>
+            <!-- Le immagini non caricate sono sostituite dal testo in alt
+                 la larghezza/altezza può essere settata a una percentuale della pagina;
+                 l'altra misura va in auto, in questo modo si adatta allo schermo-->
+            <img src="https://i.redd.it/4jeoorb09gn41.jpg" alt="Fluffy Parrot" style="width: 50%; height: auto;">
+            <a href="Home.html" title="Torna alla Home">
+            <!-- Si può usare un'immagine come link-->
+                <img src="Crocco.png" style="width: 30%; height: auto;">
+            </a><br>
+            <hr><br><span style="font-size: 250%;">
+                Si possono mappare parti di immagine per fare cose diverse: 
+                <a href="https://www.w3schools.com/html/html_images_imagemap.asp" title="sito w3schools">
+                    vedi qui
+                </a>
+                .
+            </span><br><hr>
+            <span style="font-size: 250%; color: antiquewhite; background-image: url(https://i.redd.it/4jeoorb09gn41.jpg); background-repeat: repeat; background-size: contain; background-attachment: scroll;">
+                Le immagini si possono usare come sfondo per pezzi diversi di una pagina
+            </span><br><hr><br>
+            <span style="font-size: 250%;">
+                Si può utilizzare il tag picture per mostrare immagini diverse in base alle dimensioni dello schermo:<br>
+                <picture style="width: 50%;height: auto;">
+                    <source media="(min-width: 2050px)" srcset="https://i.redd.it/4jeoorb09gn41.jpg">
+                    <source media="(min-width: 465px)" srcset="Crocco.png">
+                    <img src="img_girl.jpg">
+                </picture>
+            </span>
+        </div>
     </body>
 </html>
