@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liste</title>
+        <link rel="icon" type="image/x-icon" href="Crocco.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width:device-width, initial-scale=1.0">
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                font-size: 30px;
+            }
+            .list-1 {padding-block-start: 80px;}
+            .list-1, .list-3, .list-4, .list-5 {
+                margin-left: 50px;
+            }
+            .list-1 ul {
+                list-style-type: square;
+                & > li.circlelist {
+                    list-style-type: disc;
+                    &:hover {
+                        background-color: aqua;
+                    }
+                }
+            }
+            .list-2 ul {
+                width: 100%;
+                position: fixed;
+                top: 0;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+                background-color: #333;
+                & > li {
+                    float: left;
+                    color: antiquewhite;
+                    padding: 16px;
+                    text-align: center;
+                    &:hover {
+                        background-color: aquamarine;
+                        color: blueviolet;
+                    }
+                & > a {
+                    color: antiquewhite;
+                    text-decoration: none;
+                }
+                }
+            }
+            .dropper > button {
+                font-size: 30px;
+                color: coral;
+                border: none;
+                background-color: inherit;
+                cursor: pointer;
+                &:hover {background-color: blue;}
+            }
+            .dropped {
+                display: none;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="list-1">
+            <strong>Unordered list:</strong>
+            <ul>
+                <li>Oggetto 1</li>
+                <li class="circlelist">Oggetto 2</li>
+            </ul>
+        </div>
+
+        <div class="list-2">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li>not Home</li>
+                <li>certainly not home</li>
+            </ul>
+        </div>
+
+        <div class="list-3">
+            <strong>L'inizio è a 788:</strong>
+            <ol start="798">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ol>
+        </div>
+
+        <div class="list-4">
+            <strong>Lista descrittiva:</strong>
+            <dl>
+                <dt>Oggetto 1</dt>
+                <dd>Descrizione</dd>
+                <dt>Oggetto 2</dt>
+                <dd>Descrizione2</dd>
+            </dl>
+        </div>
+
+        <div class="list-5">
+            <strong>Lista con elementi dropdown</strong>
+            <dl>
+                <dt class="dropper"><button onclick="dropDown('dropme1')">Droppamene uno</button></dt>
+                <dd class="dropped" id="dropme1">Dropped content</dd>
+                <dt class="dropper"><button onclick="dropDown('dropme2')">Droppamene due</button></dt>
+                <dd class="dropped" id="dropme2"><div>
+                    <ol>
+                        <li>Dropped content</li>
+                        <li>Dropped again</li>
+                    </ol></div></dd>
+            </dl>
+        </div>
+
+        <script>
+            function dropDown(dropWhat) {
+                document.getElementById(dropWhat).classList.toggle('dropped');
+            }
+        </script>
+
+    </body>
+</html>

@@ -93,10 +93,10 @@
                     font-size: 100%;
                 }
                 .navbar a {
-                    font-size: 200%;
+                    font-size: 150%;
                 }
                 .navbar button {
-                    font-size: 200%;
+                    font-size: 150%;
                 }
             }
         </style>
@@ -128,11 +128,36 @@
                 Tables
             </a>
             <br><hr>
+            <a href="Listas.html">
+                Lists
+            </a>
+            <br><hr>
         </div>
 
-        <div id="css" class="lista"><br><br><br><br><br>WIP</div>
+        <div id="css" class="lista"><br><br><br><br><br>
+            <ul style="list-style-type: none;"><span>CSS sheets</span>
+                <li>
+                    <ul><a href="Listas.html">Nesting selectors:</a>
+                        <ul><li>
+                            .list-1 ul {<br>
+                list-style-type: square;<br>
+                & > li.circlelist {<br>
+                    list-style-type: disc;<br>
+                    &:hover {<br>
+                        background-color: aqua;<br>
+                    }<br>
+                }<br>
+            }
+                        </li></ul>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-        <div id="js" class="lista"><br><br><br><br><br>WIP</div>
+        <div id="js" class="lista"><br><br><br><br><br>
+        <ul>
+            <li>classList.toggle() aggiunge/rimuove una classe dall'elemento</li>
+        </ul></div>
 
         <div id="warn"></div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
