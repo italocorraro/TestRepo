@@ -49,6 +49,22 @@
                 background-color: aqua;
                 color: antiquewhite;
             }
+            .navbar button {
+                float: left;
+                background-color: rgba(0, 0, 0 , 0);
+                cursor: pointer;
+                border: none;
+                color: brown;
+                padding-left: 14px;
+                padding-right: 17px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 400%;
+            }
+            .navbar button:hover {
+                background-color: brown;
+                color: aliceblue;
+            }
             .bottom {
                 background-color: orange;
                 background-image: url("Bars.png");
@@ -68,13 +84,33 @@
                 text-align: center;
                 text-decoration: none;
             }
+            .lista {
+                margin-left: 30px;
+                display: none;
+            }
+            @media only screen and (max-width: 600px) {
+                body {
+                    font-size: 100%;
+                }
+                .navbar a {
+                    font-size: 200%;
+                }
+                .navbar button {
+                    font-size: 200%;
+                }
+            }
         </style>
     </head>
     <body>
+
         <div class="navbar">
             <a href="Home.html">Home</a>
+            <button onclick="navbarSwitch('html')">Html</button>
+            <button onclick="navbarSwitch('css')">CSS</button>
+            <button onclick="navbarSwitch('js')">JavaScript</button>
         </div>
-        <div id="top" style="margin-left: 30px;">
+
+        <div id="html" style="display: block;" class="lista">
             <br><br><br><br><br>
             <a href="Basic Styles.html">
                 Basic Styles
@@ -93,11 +129,27 @@
             </a>
             <br><hr>
         </div>
+
+        <div id="css" class="lista"><br><br><br><br><br>WIP</div>
+
+        <div id="js" class="lista"><br><br><br><br><br>WIP</div>
+
+        <div id="warn"></div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
         <div class="bottom">
             <a href="#top">To top</a>
         </div><br><br>
+
+        <script>
+            function navbarSwitch(idName) {
+                document.getElementById('html').style.display = "none";
+                document.getElementById('css').style.display = "none";
+                document.getElementById('js').style.display = "none";
+                document.getElementById(idName).style.display = "block";
+            }
+        </script>
     </body>
 </html>
