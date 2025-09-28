@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Border Images</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+        <style>
+            .border1 {
+                border: 50px solid transparent;
+                padding: 5px;
+                font-size: 30px;
+                border-image-source: url("brothel.png");
+                border-image-slice: 35%;
+                border-image-repeat: round;
+                border-image-outset: 0;
+            }
+            .breaker1 {
+                display: block;
+                border: 0px;
+                height: 20px;
+                background-image: url("broth.png");
+                background-repeat: repeat-x;
+                background-size: contain;
+            }
+        </style>
+    </head>
+    <body class="border1" style="width: 60%; display: grid; grid-template-columns: 60% 40%;">
+        <ul class="border1">
+            <li>Un elemento può essere circondato da un immagine utilizzata per contorno</li>
+            <li>basta specificarne la fonte (source)</li>
+            <li>il taglio (in px o altro o in % della sua dimensione)</li>
+        </ul>
+        <img src="Crocco.png" class="border1" style="width: 30%; align-self: center;">
+        <div style="text-align: center; margin: 0; grid-area: 2 / 1 / span 1 / span 2;">
+            <hr class="breaker1">
+        </div>
+        <div>
+            WIP
+        </div>
+    </body>
+</html>
