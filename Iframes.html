@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iframes</title>
+        <link rel="icon" type="image/x-icon" href="Crocco.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            iframe {
+                width: 500px;
+                height: 300px;
+            }
+            @media only screen and (max-width: 500px) {
+                iframe {
+                    width: 300px;
+                    height: 160px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Iframes</h3>
+        <p>Includono pagine web esterne nel documento:</p>
+        <iframe src="Home.html"></iframe><hr>
+        <p>Si possono modificare come fossero immagini (stesse proprietà style):</p>
+        <iframe src="Home.html" style="width: 100%; height: 400px; border: none;"></iframe>
+        <p>Qui si è ingrandito l'inserto e si è tolto il contorno</p><hr>
+        <p>Gli si può dare un titolo come attributo</p>
+        <iframe src="Home.html" title="Questa HOME"></iframe><hr>
+        <p>Dando un nome (attributo) all'inserto si può usare anche come target (attributo) per diversi link:</p>
+        <iframe name="targetto">Spazio VUOTO</iframe>
+        <ul>
+            <li><a href="Home.html" target="targetto">Link a Home</a></li>
+            <li><a href="Basic Styles.html" target="targetto">Link a Basic Styles</a></li>
+        </ul>
+    </body>
+</html>

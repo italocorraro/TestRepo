@@ -79,24 +79,53 @@
             }
             .bottom a {
                 color: brown;
-                padding-left: 50%;
-                padding-right: 17px;
+                margin-left: 50%;
+                margin-right: 17px;
+                padding-left: 15px;
+                padding-right: 15px;
                 text-align: center;
                 text-decoration: none;
+                &:hover {
+                    background-color: rgba(125, 120, 125, 0.6);
+                }
             }
             .lista {
                 margin-left: 30px;
-                display: none;
+                margin-top: 180px;
+                }
+            ul.notes {
+                background-color: rgba(125, 125, 125, 0.6);
+                width: 70%; 
+                padding-bottom: 15px; 
+                padding-top: 15px;
             }
+            div.lista > a:link {
+                background-color: rgba(100, 80, 80, 0.6);
+                padding-left: 10px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+            div.lista > a:visited {
+                color: aquamarine;
+            }
+            .hidden {display: none;}
             @media only screen and (max-width: 600px) {
                 body {
-                    font-size: 100%;
+                    font-size: 15px;
                 }
                 .navbar a {
-                    font-size: 150%;
+                    font-size: 20px;
                 }
                 .navbar button {
-                    font-size: 150%;
+                    font-size: 20px;
+                }
+                .lista {
+                    margin-left: 10px;
+                    margin-top: 40px;
+                }
+                div.lista > a:link {
+                    padding: 4px;
                 }
             }
         </style>
@@ -110,8 +139,7 @@
             <button onclick="navbarSwitch('js')">JavaScript</button>
         </div>
 
-        <div id="html" style="display: block;" class="lista">
-            <br><br><br><br><br>
+        <div id="html" class="lista">
             <a href="Basic Styles.html">
                 Basic Styles
             </a>
@@ -132,14 +160,14 @@
                 Lists
             </a>
             <br><hr>
-            <a href="#">
+            <a href="Iframes.html">
                 Iframe
             </a>
             <br><hr>
         </div>
 
-        <div id="css" class="lista"><br><br><br><br><br>
-            <ul style="list-style-type: none;"><span>CSS sheets</span>
+        <div id="css" class="lista hidden"><br><br><br><br><br>
+            <ul class="notes" style="list-style-type: none;"><span><strong>CSS sheets</strong></span>
                 <li>
                     <ul><a href="Listas.html">Nesting selectors:</a>
                         <ul><li>
@@ -158,10 +186,15 @@
             </ul>
         </div>
 
-        <div id="js" class="lista"><br><br><br><br><br>
-        <ul style="background-color: rgba(125, 125, 125, 0.6); width: 70%; padding-bottom: 15px; padding-top: 15px;">
+        <div id="js" class="lista hidden"><br><br><br><br><br>
+        <ul class="notes">
             <li style="list-style-type: none; margin-left: -20px; margin-bottom: 10px;"><strong>Appunti</strong></li>
-            <li>classList.toggle() aggiunge/rimuove una classe dall'elemento</li>
+            <li>classList.toggle("classe") aggiunge/rimuove una classe dall'elemento</li>
+            <li>classList.add("classe") aggiunge una classe</li>
+            <li>classList.remove("classe") rimuove una classe</li>
+            <li>classList.replace("classeSostituita", "classeSostituto") sostituisce una classe con un'altra</li>
+            <li style="list-style-type: none; margin-left: -20px;"><strong>NB:</strong> si possono modificare più classi insieme separandole con uno spazio;<br>
+                ciascun comando restituisce undefined tranne replace che restituisce true/false in base alla riuscita dell'operazione</li>
         </ul>
         </div>
 
@@ -176,10 +209,11 @@
 
         <script>
             function navbarSwitch(idName) {
-                document.getElementById('html').style.display = "none";
-                document.getElementById('css').style.display = "none";
-                document.getElementById('js').style.display = "none";
-                document.getElementById(idName).style.display = "block";
+                const LISTE = document.getElementsByClassName("lista");
+                for (let i = 0; i < LISTE.length; i++) {
+                    LISTE[i].classList.add("hidden");
+                }
+                document.getElementById(idName).classList.remove("hidden");
             }
         </script>
     </body>

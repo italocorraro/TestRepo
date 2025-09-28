@@ -6,4 +6,58 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
+    <body>
+        <p>Creare una tabella con il tag table</p>
+        <p>
+            Si aggiungono righe alla tabella con tr (table row);<br>
+            ogni elemento (cella) necessita del tag td,<br>
+            se l'elemento è un header, si usa il tag th che è di default in grassetto
+        </p>
+        <table>
+            <tr>
+                <th>Testa1</th>
+                <th>Testa2</th>
+                <th>Testa3</th>
+            </tr>
+            <tr>
+                <td>Obj1</td>
+                <td>Obj2</td>
+                <td>Obj3</td>
+            </tr><hr>
+        </table>
+
+        <p>
+            La tabella può utilizzare diversi elementi di style:<br>
+            <ul>
+                <li>può ottenere un contorno (sarà a doppia linea: uno per la tabella e uno per la singola cella)</li>
+                <li>può collassare il contorno usando border-collapse: collapse</li>
+                <li>può avere i bordi arrotondati con border-radius</li>
+                <li>se si vogliono stilizzare solo le celle della tabella basta modificare solo i suoi elementi (th,td) invece che l'intera tabella</li>
+                <li>border-style può essere utilizzato per modificare il tipo di contorno (ad esempio punteggiato)</li>
+                <li>si possono colorare i bordi attorno alle celle e anche il loro contenuto</li>
+                <li>si può usare l'attributo (o l'equivalente style) width e height per modificare le dimensioni della tabella o dei suei elementi interni</li>
+                <li>alla tabella si può aggiungere un caption per dargli un nome visibile</li>
+            </ul>
+        </p>
+        <table style="width: 100%; border: 2px solid gray;">
+            <caption>Caption</caption>
+            <tr>
+                <th>Header1</th>
+                <td>Obj11</td>
+                <td>Obj12</td>
+            </tr>
+            <tr style="width: 100px;">
+                <th style="text-align: left; color: red; width: 180px;">Header2 (stilizzato)</th>
+                <td style="border: 2px solid black; border-radius: 20px; text-align: center;">Obj21</td>
+                <td style="border: 4px solid rebeccapurple; border-collapse: collapse;">Obj22</td>
+            </tr>
+        </table>
+        <ul>
+            <li>Sono disponibili anche le proprietà di padding e margin</li>
+            <li>Per ciascuna cella è possibile usare le proprietà colspan o rowspan per fargli prendere lo spazio di più celle orizzontalmente o verticalmente rispettivamente</li>
+            <li>Si possono evidenziare le righe su cui si passa usando :hover</li>
+            <li>Si possono evidenziare colori alterni aggiungendo alle singole celle (th,td) il selettore :nth-child(even) (questo selettore può prendere argomenti diversi da even, ad esempio odd, per selezionare gli indici dispari invece che pari)</li>
+        </ul>
+        
+    </body>
 </html>
