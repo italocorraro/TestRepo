@@ -22,9 +22,19 @@
                 background-repeat: repeat-x;
                 background-size: contain;
             }
+            @media only screen and (max-width: 600px) {
+                .border1 {
+                    font-size: 10px;
+                }
+            }
         </style>
+        <link rel="stylesheet" href="navstyle.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="navigation.js"></script>
     </head>
-    <body class="border1" style="width: 60%; display: grid; grid-template-columns: 60% 40%;">
+    <body>
+        <div id="includedContent"></div>
+        <div class="border1 content" style="width: 60%; display: grid; grid-template-columns: 60% 40%;">
         <ul class="border1">
             <li>Un elemento può essere circondato da un immagine utilizzata per contorno</li>
             <li>basta specificarne la fonte (source)</li>
@@ -37,5 +47,9 @@
         <div>
             WIP
         </div>
+        </div>
+       <script>$(function() {
+      $("#includedContent").load("Navbar.html"); 
+    });</script>
     </body>
 </html>
