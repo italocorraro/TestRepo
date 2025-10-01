@@ -57,12 +57,23 @@ a:active {
   text-decoration: underline;
 }
 
-</style></head>
+</style>
+<link rel="stylesheet" href="navstyle.css" type="text/css">
+        <script src="navigation.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            $(function() {
+                $("#includeHtml").load("Navbar.html");
+            });
+        </script>
+</head>
 
 <!-- HYPERLINKS-->
 
 <html>
     <body>
+        <div id="includeHtml"></div>
+        <div class="content">
         <p> <!-- Generale URL assoluti-->
             <a href="https://italocorraro.github.io/TestRepo/Basic Styles" id="cima">
                 testo link generale</a><br><br>
@@ -104,5 +115,5 @@ a:active {
                 torna in cima
             </a><br><br id="fondo">
         </p>
-    </body>
+    </div></body>
 </html>

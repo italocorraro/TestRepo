@@ -17,8 +17,18 @@
                 }
             }
         </style>
+        <link rel="stylesheet" href="navstyle.css" type="text/css">
+        <script src="navigation.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            $(function() {
+                $("#includeHtml").load("Navbar.html");
+            });
+        </script>
     </head>
     <body>
+        <div id="includeHtml"></div>
+        <div class="content">
         <h3>Iframes</h3>
         <p>Includono pagine web esterne nel documento:</p>
         <iframe src="Home.html"></iframe><hr>
@@ -33,5 +43,5 @@
             <li><a href="Home.html" target="targetto">Link a Home</a></li>
             <li><a href="Basic Styles.html" target="targetto">Link a Basic Styles</a></li>
         </ul>
-    </body>
+    </div></body>
 </html>

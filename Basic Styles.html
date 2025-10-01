@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 
+<head>
+	<link rel="stylesheet" href="navstyle.css" type="text/css">
+    <script src="navigation.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function() {
+            $("#includeHtml").load("Navbar.html");
+        });
+    </script>
+</head>
+
 <!-- CSS BASICS-->
 
 <!-- Inline coloring-->
 <html>
 	<head><title>ColorTest</title></head>
 <body>
-
+	<div id="includeHtml"></div>
+<div class="content">
 <!-- Test Colori RGB
  	 rgba(red, green, blue, alpha)-->
 <h1 style="color:rgb(0, 0, 250); background-color:rgba(0, 0, 0, 0.5);">
@@ -78,7 +90,7 @@ color: black; font-family: comic sans ms; font-size: 300%;">
 color: black; font-family: comic sans ms; font-size: 300%;">
 	Black border, margin 30px
 </p>
-</body>
+</div></body>
 </html>
 
 <!-- Alternativamente si può definire lo stile su un documento .css separato e importarlo in head:
