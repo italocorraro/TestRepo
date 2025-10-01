@@ -10,8 +10,18 @@
                 background-color: beige;
             }
         </style>
+        <link rel="stylesheet" href="navstyle.css" type="text/css">
+        <script src="navigation.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            $(function() {
+                $("#includeHtml").load("Navbar.html");
+            });
+        </script>
     </head>
     <body>
+        <div id="includeHtml"></div>
+        <div class="content">
         <div>
             <!-- Le immagini non caricate sono sostituite dal testo in alt
                  la larghezza/altezza può essere settata a una percentuale della pagina;
@@ -40,5 +50,10 @@
                 </picture>
             </span>
         </div>
-    </body>
+
+        <div>
+            <p>Si può utilizzare un'immagine come contorno per un altro elemento:</p>
+            <div style="width: 50%; font-size: 20px; border: 10px solid transparent; padding: 10px; border-image: url('brothel.png') 40% round;"> Testo a caso circonadto da un'immagine</div>
+        </div>
+    </div></body>
 </html>
