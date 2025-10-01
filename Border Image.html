@@ -29,11 +29,16 @@
             }
         </style>
         <link rel="stylesheet" href="navstyle.css" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="navigation.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            $(function() {
+                $("#includeHtml").load("Navbar.html");
+            });
+        </script>
     </head>
     <body>
-        <div id="includedContent"></div>
+        <div id="includeHtml"></div>
         <div class="border1 content" style="width: 60%; display: grid; grid-template-columns: 60% 40%;">
         <ul class="border1">
             <li>Un elemento può essere circondato da un immagine utilizzata per contorno</li>
@@ -48,8 +53,5 @@
             WIP
         </div>
         </div>
-       <script>$(function() {
-      $("#includedContent").load("Navbar.html"); 
-    });</script>
     </body>
 </html>
