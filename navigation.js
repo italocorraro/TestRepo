@@ -6,7 +6,7 @@ $(function() {
                 $("#includeHtml").load("Navbar.html");
             });
 
-$(document).ready(function(){
+$(function(){
   $(".flip").click(function(){
     $(this).toggleClass("active");
     $(this).next(".panel").slideToggle("fast");
