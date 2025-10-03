@@ -1,5 +1,16 @@
 .content {
     width: 100%;
+    margin-top: 80px;
+}
+.headbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    background-color: bisque;
 }
 #navbar {
     position: fixed;
@@ -11,10 +22,11 @@
     overflow-y: scroll;
     background-color: #333;
     display: block;
-    z-index: 1;
+    z-index: 101;
     transition: 0.3s;
     font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    & * {margin-top: 60px;}
     & li {
         list-style-type: circle;
         margin-left: 10px;
@@ -84,7 +96,7 @@ li.active {
   background-color: bisque;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
     #navbar {
         left: 0;
         right: auto;
@@ -99,6 +111,10 @@ li.active {
     .content {
         width: 70%;
         margin-left: 30%;
+        margin-top: 0;
+    }
+    .headbar {
+        display: none;
     }
     .navtoggle {
         display: none !important;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Notes</title>
         <link rel="icon" type="image/x-icon" href="Crocco.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,14 +29,15 @@
             .navbar {
                 position: fixed;
                 top: 0;
-                left: 0;
-                width: 100%;
+                margin-top: 0;
+                right: 0;
+                width: 70%;
                 background-color: #333;
                 background-position: top;
                 background-repeat: repeat;
                 background-size: auto;
                 background-attachment: scroll;
-                overflow: hidden;
+                overflow: clip;
             }
             .navbar a {
                 float: left;
@@ -45,7 +46,7 @@
                 padding-right: 17px;
                 text-align: center;
                 text-decoration: none;
-                font-size: 300%;
+                font-size: 200%;
             }
             .navbar a:hover {
                 background-color: aqua;
@@ -61,7 +62,7 @@
                 padding-right: 17px;
                 text-align: center;
                 text-decoration: none;
-                font-size: 300%;
+                font-size: 200%;
             }
             .navbar button:hover {
                 background-color: brown;
@@ -77,6 +78,7 @@
                 width: 100%;
                 overflow: hidden;
                 bottom: 0;
+                left: 0;
             }
             .bottom a {
                 color: brown;
@@ -107,11 +109,15 @@
                 color: aquamarine;
             }
             .hidden {display: none;}
-            @media only screen and (max-width: 600px) {
+            @media only screen and (max-width: 900px) {
                 body {
                     font-size: 15px;
                     margin-left: 10px;
-                    margin-top: 40px;
+                    margin-top: 120px;
+                }
+                .navbar {
+                    width: 100%;
+                    top: 80px;
                 }
                 .navbar a {
                     font-size: 20px;
@@ -123,62 +129,43 @@
                     padding: 4px;
                 }
             }
+            
         </style>
+        <link rel="stylesheet" href="navstyle.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="navigation.js"></script>
     </head>
     <body>
-
+        <div id="includeHtml"></div>
+        <div class="content">
         <div class="navbar">
-            <a href="Home.html">Home</a>
             <button onclick="navbarSwitch('html')">Html</button>
             <button onclick="navbarSwitch('css')">CSS</button>
             <button onclick="navbarSwitch('js')">JavaScript</button>
+            <button onclick="navbarSwitch('jquery')">JQuery</button>
         </div>
 
         <div id="html" class="lista">
-            <a href="Basic Styles.html">
-                Basic Styles
-            </a>
-            <br><hr>
-            <a href="Hyperlinks.html">
-                Hyperlinks
-            </a> 
-            <br><hr>
-            <a href="Imageses.html">
-                Images
-            </a>
-            <br><hr>
-            <a href="#">
-                Tables
-            </a>
-            <br><hr>
-            <a href="Listas.html">
-                Lists
-            </a>
-            <br><hr>
-            <a href="Iframes.html">
-                Iframe
-            </a>
-            <br><hr>
+            
         </div>
 
         <div id="css" class="lista hidden">
             <ul class="notes" style="list-style-type: none;"><span><strong>CSS sheets</strong></span>
                 <li>
                     <ul><a href="Listas.html">Nesting selectors:</a>
-                        <ul><li>
-                            .list-1 ul {<br>
-                list-style-type: square;<br>
-                & > li.circlelist {<br>
-                    list-style-type: disc;<br>
-                    &:hover {<br>
-                        background-color: aqua;<br>
-                    }<br>
-                }<br>
-            }
+                        <ul><li style="white-space: pre;"><span>  .list-1 ul {</span>
+<span>      list-style-type: square;</span>
+<span>      & > li.circlelist {</span>
+<span>          list-style-type: disc;</span>
+<span>          &:hover {</span>
+<span>              background-color: aqua;</span>
+<span>          }</span>
+<span>      }</span>
+<span>  }</span>
                         </li></ul>
                     </ul>
                 </li>
-                <li><a href="Border Image.html">Border Images</a></li>
+                <li></li>
             </ul>
         </div>
 
@@ -194,6 +181,12 @@
         </ul>
         </div>
 
+        <div id="jquery" class="lista hidden">
+        <ul class="notes">
+            <li style="list-style-type: none; margin-left: -20px; margin-bottom: 10px;"><strong>Appunti</strong></li>
+        </ul>
+        </div>
+
         <div id="warn"></div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -202,6 +195,7 @@
         <div class="bottom">
             <a href="#top">To top</a>
         </div><br><br>
+        </div>
 
         <script>
             function navbarSwitch(idName) {
