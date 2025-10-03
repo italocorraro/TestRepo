@@ -26,7 +26,7 @@
     transition: 0.3s;
     font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    & * {margin-top: 60px;}
+    & > *:first-child {margin-top: 60px;}
     & li {
         list-style-type: circle;
         margin-left: 10px;
