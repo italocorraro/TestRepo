@@ -38,6 +38,7 @@
                 background-size: auto;
                 background-attachment: scroll;
                 overflow: clip;
+                user-select: none;
             }
             .navbar a {
                 float: left;
@@ -92,11 +93,42 @@
                     background-color: rgba(125, 120, 125, 0.6);
                 }
             }
-            ul.notes {
+            .notes {
                 background-color: rgba(125, 125, 125, 0.6);
                 width: 70%; 
                 padding-bottom: 15px; 
                 padding-top: 15px;
+            }
+            .notes .notehead {
+                font-weight: bold;
+                list-style-type: none; 
+                margin-left: -20px; 
+                margin-bottom: 10px;
+                cursor: pointer;
+                user-select: none;
+            }
+            .notes .notedesc {
+                list-style-type: none; 
+                margin-left: -20px; 
+                margin-bottom: 10px;
+            }
+            .notes .notebene {
+                list-style-type: none; 
+                margin-left: -20px; 
+                margin-bottom: 10px;
+                &::before {
+                    content: "NB: ";
+                    font-weight: bold;
+                }
+            }
+            .notes .notesemp {
+                list-style-type: none; 
+                margin-left: -20px; 
+                margin-bottom: 10px;
+                &::before {
+                    content: "EG: ";
+                    font-weight: bold;
+                }
             }
             div.lista > a:link {
                 background-color: rgba(100, 80, 80, 0.6);
@@ -146,14 +178,60 @@
         </div>
 
         <div id="html" class="lista">
-            
+            <ul class="notes">
+                <li class="notehead">&lt;head&gt;</li>
+                <li class="notedesc">&lt;head&gt; incluso in &lt;html&gt; prima del &lt;body&gt;; non è visualizzato nella pagina; contiene informazioni utili al browser:</li>
+                <li>&lt;title&gt;: include il titolo visualizzato sul browser</li>
+                <li>&lt;base&gt;: include il percorso base da usare per gli URL relativi nell'attributo href (non va chiuso)</li>
+                <li>&lt;style&gt;: include il foglio di stile CSS locale</li>
+                <li>&lt;script&gt;: include lo script locale del foglio; con l'attributo src si può importare una libreria esterna</li>
+                <li>&lt;link&gt;: definisce una relazione con un documento esterno; tipicamente usato per importare file esterni di stile</li>
+                <li>&lt;meta&gt;: include i metadati del documento (non va chiuso)</li>
+                <ul>
+                    <li>usato per specificare il set di caratteri da usare</li>
+                    <li>per specificare il viewport (in modo da avere una corretta visualizzazione su mobile)</li>
+                    <li>per indicare l'autore e altri dati generici sul documento</li>
+                    <li>per indicare le keyword del documento usate in particolare dai motori di ricerca</li>
+                    <li class="notesemp"><br>
+                        &lt;meta charset="UTF-8"&gt;<br>
+                        &lt;meta name="description" content="Free Web tutorials"&gt;<br>
+                        &lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;<br>
+                        &lt;meta name="author" content="John Doe"&gt;
+                        &lt;name="viewport" content="width=device-width, initial-scale=1"&gt;</li>
+                </ul>
+            </ul>
+            <ul class="notes">
+                <li class="notehead">Elementi "block"</li>
+                <li>Elementi come &lt;div&gt; e &lt;p&gt; sono elementi block; di default questi elementi 
+                    iniziano sempre un nuovo rigo e occupano tutta la larghezza a disposizione (fondamentalmente sono dei <i>blocchi</i>)</li>
+                <li>&lt;p&gt; inoltre inizia e finisce lasciando una riga vuota</li>
+                <li>&lt;div&gt; non possiede nessuna formattazione di default (all'infuori di essere elemento "block") 
+                    ed è per questo comunemente utilizzato come contenitore per altri elementi;<br>
+                    utilizzato in particolare per contenere i blocchi logici delle pagine strutturate con float/clear, flexbox o grid</li>
+                <li class="notehead">Elementi "in-line"</li>
+                <li>Elementi come &lt;span&gt; non iniziano una nuova riga e occupano tutta la larghezza disponibile</li>
+            </ul>
+            <ul class="notes">
+                <li class="notehead">Entità</li>
+                <li class="notedesc">Le entity sono precedute da & e chiuse da ; e servono a 
+                    rappresentare caratteri speciali inclusi &lt; e &gt; che normalmente 
+                    sarebbero esclusivi di html</li>
+                <li>&lt; è rappresentato con &lt</li>
+                <li>&gt; è rappresentato con &gt</li>
+            </ul>
+            <ul class="notes">
+                <li class="notehead">Elementi Fondamentali del &lt;body&gt;</li>
+                <li>&lt;a&gt;&lt;/a&gt; con attributo href per il link</li>
+                <li>&lt;img&gt; con attributo src per il link dell'immagine</li>
+            </ul>
         </div>
 
         <div id="css" class="lista hidden">
-            <ul class="notes" style="list-style-type: none;"><span><strong>CSS sheets</strong></span>
+            <ul class="notes">
+                <li class="notehead">Nesting Selector Esempio</li>
                 <li>
-                    <ul><a href="Listas.html">Nesting selectors:</a>
-                        <ul><li style="white-space: pre;"><span>  .list-1 ul {</span>
+                    <ul>
+                        <li style="white-space: pre;"><span>  .list-1 ul {</span>
 <span>      list-style-type: square;</span>
 <span>      & > li.circlelist {</span>
 <span>          list-style-type: disc;</span>
@@ -162,28 +240,27 @@
 <span>          }</span>
 <span>      }</span>
 <span>  }</span>
-                        </li></ul>
+                        </li>
                     </ul>
                 </li>
-                <li></li>
             </ul>
         </div>
 
         <div id="js" class="lista hidden">
         <ul class="notes">
-            <li style="list-style-type: none; margin-left: -20px; margin-bottom: 10px;"><strong>Appunti</strong></li>
+            <li class="notehead">Modifica rapida alla lista delle classi di un elemento</li>
             <li>classList.toggle("classe") aggiunge/rimuove una classe dall'elemento</li>
             <li>classList.add("classe") aggiunge una classe</li>
             <li>classList.remove("classe") rimuove una classe</li>
             <li>classList.replace("classeSostituita", "classeSostituto") sostituisce una classe con un'altra</li>
-            <li style="list-style-type: none; margin-left: -20px;"><strong>NB:</strong> si possono modificare più classi insieme separandole con uno spazio;<br>
+            <li class="notebene">si possono modificare più classi insieme separandole con uno spazio;<br>
                 ciascun comando restituisce undefined tranne replace che restituisce true/false in base alla riuscita dell'operazione</li>
         </ul>
         </div>
 
         <div id="jquery" class="lista hidden">
         <ul class="notes">
-            <li style="list-style-type: none; margin-left: -20px; margin-bottom: 10px;"><strong>Appunti</strong></li>
+            <li class="notehead"><strong>WIP</strong></li>
         </ul>
         </div>
 
@@ -205,6 +282,9 @@
                 }
                 document.getElementById(idName).classList.remove("hidden");
             }
+            $(".notehead").click(function() {
+                $(this).nextUntil(".notehead").slideToggle("fast");
+            })
         </script>
     </body>
 </html>

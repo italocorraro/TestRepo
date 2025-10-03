@@ -8,6 +8,22 @@
         <link rel="stylesheet" href="navstyle.css" type="text/css">
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	    <script src="navigation.js"></script>
+        <style>
+            table.secunda {
+                width: 100%;
+                border: 3px solid black;
+                & tr:nth-child(even) {
+                    background-color: aqua;
+                }
+                & tr:hover {
+                    background-color: antiquewhite;
+                }
+                & tr:first-child > th  {
+                    border: none;
+                    border-bottom: 5px solid black;
+                }
+            }
+        </style> 
     </head>
     <body> 
         <div id="includeHtml"></div>
@@ -59,10 +75,27 @@
         </table>
         <ul>
             <li>Sono disponibili anche le proprietà di padding e margin</li>
-            <li>Per ciascuna cella è possibile usare le proprietà colspan o rowspan per fargli prendere lo spazio di più celle orizzontalmente o verticalmente rispettivamente</li>
+            <li>Per ciascuna cella è possibile usare le proprietà colspan o rowspan per fargli prendere lo spazio di più celle 
+                orizzontalmente o verticalmente rispettivamente</li>
             <li>Si possono evidenziare le righe su cui si passa usando :hover</li>
-            <li>Si possono evidenziare colori alterni aggiungendo alle singole celle (th,td) il selettore :nth-child(even) (questo selettore può prendere argomenti diversi da even, ad esempio odd, per selezionare gli indici dispari invece che pari)</li>
+            <li>Si possono evidenziare colori alterni usando nella stylesheet il selettore tr:nth-child(even) 
+                (questo selettore può prendere argomenti diversi da even, ad esempio odd, per selezionare gli indici dispari invece che pari)</li>
         </ul>
+        <table class="secunda">
+            <tr>
+                <th colspan="3">Riga Luuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuunga</th>
+            </tr>
+            <tr>
+                <th>pari</td>
+                <td>con</td>
+                <td>nani</td>
+            </tr>
+            <tr>
+                <th>dispari</th>
+                <td>sesso</td>
+                <td>con</td>
+            </tr>
+        </table>
         
     </div></body>
 </html>
