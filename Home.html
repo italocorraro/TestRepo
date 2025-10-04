@@ -11,13 +11,24 @@
                 top: 0;
                 background-color: black;
                 background-image: url("Crocco.png");
-                background-position: left top;
+                background-position: right top;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
                 font-size: 200%;
-                margin-top: 160px;
-                margin-left: 30px;
+                margin-top: 120px !important;
+                margin-left: 30px !important;
+                overflow-x: hidden;
+            }
+            div.content .notes {
+                background-image: url("Crocco2.png");
+                background-position: left top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                border: 1px solid whitesmoke;
+                outline: 2px solid whitesmoke;
+                outline-offset: 2px;
             }
             hr {
                 margin-left: 0;
@@ -55,7 +66,7 @@
             }
             .navbar button {
                 float: left;
-                background-color: rgba(0, 0, 0 , 0);
+                background-color: transparent;
                 cursor: pointer;
                 border: none;
                 color: brown;
@@ -94,6 +105,7 @@
                 }
             }
             .notes {
+                margin-left: 3%;
                 background-color: rgba(125, 125, 125, 0.6);
                 width: 70%; 
                 padding-bottom: 15px; 
@@ -144,8 +156,9 @@
             @media only screen and (max-width: 900px) {
                 body {
                     font-size: 15px;
-                    margin-left: 10px;
-                    margin-top: 120px;
+                    overflow-x: hidden;
+                    margin: 120px 0 0 !important;
+                    padding: 0;
                 }
                 .navbar {
                     width: 100%;
@@ -160,15 +173,19 @@
                 div.lista > a:link {
                     padding: 4px;
                 }
+                .notes {
+                    width: 85%;
+                    margin-left: 2%;
+                    
+                }
             }
             
         </style>
         <link rel="stylesheet" href="navstyle.css" type="text/css">
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="navigation.js"></script>
+        <script src="Navigazione.js"></script>
     </head>
     <body>
-        <div id="includeHtml"></div>
         <div class="content">
         <div class="navbar">
             <button onclick="navbarSwitch('html')">Html</button>
@@ -265,9 +282,6 @@
         </div>
 
         <div id="warn"></div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
         <div class="bottom">
             <a href="#top">To top</a>
