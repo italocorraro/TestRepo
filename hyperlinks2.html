@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<head>
+<title>Test Hyperlinks</title>    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="SuperPotato.ico">
+<style>
+
+body {
+    font-family: comic sans ms;
+    font-size: 300%;
+    background-color: black;
+    background-image: url("Puhtato.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.buttons:link {
+  color: blue;
+  background-color: orange;
+  text-decoration: none;
+}
+
+a:visited {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.buttons:visited {
+  color: pink;
+  background-color: red;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orangered;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a.buttons:hover {
+  color: orangered;
+  background-color: green;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+</style>
+<link rel="stylesheet" href="navstyle.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="Navigazione.js"></script>
+</head>
+
+<!-- HYPERLINKS-->
+
+<html>
+    <body>
+        <div id="includeHtml">
+            <div id="navbar">
+        <ul>
+
+            <li>
+                <a href="Home.html">
+                    Appunti
+                </a>
+            </li>
+
+<!--        Lista pagine HTML                          -->
+            <li class="flip">
+                <span>HTML</span>
+            </li>
+            <ul class="panel">
+                <li>
+                    <a href="Basic Styles.html">
+                        Basic Styles
+                    </a>
+                </li>
+                <li>
+                    <a href="Hyperlinks.html">
+                        Hyperlinks
+                    </a>
+                </li>
+                <li>
+                    <a href="Imageses.html">
+                        Images
+                    </a>
+                </li>
+                <li>
+                    <a href="Tablers.html">
+                        Tables
+                    </a>
+                </li>
+                <li>
+                    <a href="Listas.html">
+                        Lists
+                    </a>
+                </li>
+                <li>
+                    <a href="Iframes.html">
+                        Iframe
+                    </a>                    
+                </li>
+            </ul>
+
+<!--        Lista pagine CSS                          -->
+            <li class="flip">
+                <span>CSS</span>
+            </li>
+            <ul class="panel">
+                <li><a href="Border Image.html">Border Images</a></li>
+            </ul>
+
+<!--        Lista pagine JS                          -->
+            <li class="flip">
+                <span>JavaScript</span>
+            </li>
+            <ul class="panel">
+                <li><a>nothing</a></li>
+<!--        Lista pagine JS                          -->
+                <li class="flip">
+                    <span>JQuery</span>
+                </li>
+                <ul class="panel">
+                    <li><a>nothing</a></li>
+                </ul>
+
+<!--        Lista pagine JS                          -->
+                <li class="flip">
+                    <span>React</span>
+                </li>
+                <ul class="panel">
+                    <li><a>nothing</a></li>
+                </ul>
+
+            </ul>
+
+
+
+
+        </ul>
+    </div>
+
+
+    <div class="headbar"></div>
+    <div class="navtoggle" id="navtoggle2">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+        </div>
+        <div class="content">
+        <p> <!-- Generale URL assoluti-->
+            <a href="https://italocorraro.github.io/TestRepo/Basic Styles" id="cima">
+                testo link generale</a><br><br>
+            <!-- si può creare un link anche a specifiche parti dello stesso documento
+                 utilizzando l'attributo id nella destinazione-->
+            <a href="#fondo">
+                vai in fondo
+            </a><br><br>
+            <!-- Attributo target per decidere dove aprire il link-->
+            <a target="_self" href="https://italocorraro.github.io/TestRepo/Basic Styles">
+                testo link target _self per default</a><br><br>
+            <a target="_blank" href="https://italocorraro.github.io/TestRepo/Basic Styles">
+                testo link target _blank per nuova pagina</a><br><br>
+            <a target="_parent" href="https://italocorraro.github.io/TestRepo/Basic Styles">
+                testo link target _parent pagina interna</a><br><br>
+            <a target="_top" href="https://italocorraro.github.io/TestRepo/Basic Styles">
+                testo link target _top corpo intero della pagina</a><br><br>
+            <!-- Attributo title per scrivere sul collegamento-->    
+            <a href="https://italocorraro.github.io/TestRepo/Basic Styles" title="This is an Image Link with title attribute">
+                <img src="Puhtato.png" style="width: 280px;">
+            </a><br><br>
+            <!-- Inviare una mail-->
+            <a href="mailto: italo.corraro@gmail.com" title="Apre software Email per inviare mail">
+                invia mail a te stesso
+            </a><br><br>
+            <!-- URL relativi-->
+            <a href="Basic Styles.html">
+                rimando a BasicStyles.html (stessa cartella non richiede /)
+            </a><br><br>
+            <a href="Rimando/HyperlinksOld.html">
+                rimando a HyperlinksOld.html (si scrive Rimando/HyperlinksOld.html per partire dalla stessa cartella)
+            </a>
+            <br><br><br><br>
+            <a href="https://italocorraro.github.io/TestRepo/Basic Styles" class="buttons">
+                link a pulsante
+            </a>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="#cima" class="buttons">
+                torna in cima
+            </a><br><br id="fondo">
+        </p>
+    </div></body>
+</html>
